@@ -1,0 +1,23 @@
+<%- include('./partials/header'); %>    
+<%- include('./partials/nav'); %>
+    <form action = "/blogs" method = "post" class = "form__container" id = "form1">
+
+        <div class = "form__group">
+            <input type = "text" id = "title" name = "title" placeholder=" " class = "form__input" required>
+            <label for = "title" class = "form__label">Title</label>
+        </div>
+
+        <div class = "form__group">
+            <input type = "text" id = "snippet" name = "snippet" placeholder = " " class = "form__input" required>
+            <label for = "snippet" class = "form__label">Snippet</label>
+        </div>
+
+        <div class = "form__group">
+            <textarea id = "body" name = "body" placeholder=" " required></textarea>
+            <label for = "body">Content</label>
+        </div>
+
+        <button class = "button__create">Submit</button>
+    </form>
+<%- include("./partials/footer"); %>
+

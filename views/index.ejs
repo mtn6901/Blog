@@ -1,0 +1,31 @@
+<%- include('./partials/header'); %>
+<%- include('./partials/nav'); %>
+        <% if (blogs.length > 0) { %>
+            <% blogs.forEach( blog => { %>
+                <div class = "blog__container">
+
+                    <div class = "blog__display">
+                        <a href = "/blogs/<%= blog._id %>"><h1 class = "title"><%= blog.title %></h1></a>
+                        <p class = "snippet"><%= blog.snippet %></p>
+                    </div>
+
+                    <div class = "blog__timestamp"><%= blog.createdAt %> </div>
+
+                </div>
+
+            <% }) %>
+        <% } else { %>
+            <h3> No blog to display</h3>
+        <% } %>
+    </div>
+    <script>
+        const containers = document.querySelectorAll(".blog__container")
+        containers.forEach(function(e) {
+            e.addEventListener("click", ()=> {
+                const url = e.getElementsByTagName("a")[0].href
+                window.location.href = url;
+            })
+        })
+
+    </script>
+<%- include('./partials/footer'); %>
